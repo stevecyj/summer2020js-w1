@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/all.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css"
+    />
+  </head>
+  <body>
+    <div id="app" class="container my-3">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">待辦事項</span>
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="準備要做的任務"
+          id="newTodo"
+        />
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button" id="addTodo">
+            新增
+          </button>
+        </div>
+      </div>
+      <div class="card text-center">
+        <ul class="list-group list-group-flush text-left" id="todoList"></ul>
+        <div class="card-footer d-flex justify-content-between">
+          <span>還有 <span id="taskCount">0</span> 筆任務</span>
+          <span>
+            <a
+              href="#"
+              class="btn btn-danger"
+              id="clearTask"
+              data-toggle="modal"
+              data-target="#removalModal"
+              >刪除所有任務</a
+            >
+            <a
+              href="#"
+              class="btn btn-warning"
+              id="clearDoneTask"
+              data-toggle="modal"
+              data-target="#removalDoneModal"
+              >刪除已完成任務</a
+            >
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="removalModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-danger text-white">
+            <h5 class="modal-title" id="exampleModalLabel">刪除提醒</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            確認刪除所有任務?
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              取消
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-danger btn-removal-all-item"
+              data-dismiss="modal"
+              id="clearAllTask"
+            >
+              刪除
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="removalDoneModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-danger text-white">
+            <h5 class="modal-title" id="exampleModalLabel">刪除提醒</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            確認刪除所有已完成任務?
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              取消
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-danger btn-removal-all-item"
+              data-dismiss="modal"
+              id="clearAllDoneTask"
+            >
+              刪除
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.2/umd/popper.min.js"></script>
+  </body>
+</html>
